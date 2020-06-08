@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@actions/core": "^1.2.4"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3"
+  },
+  "name": "actions-update-metadata",
+  "scripts": {
+    "build": "ncc build"
+  },
+  "keywords": [
+    "github",
+    "actions"
+  ],
+  "version": "1.0.0",
+  "description": "An action used to update the metadata of starbuttons.",
+  "main": "index.js",
+  "repository": "git@github.com:suisei-cn/actions-update-metadata.git",
+  "author": "Outvi V <git@outv.im>",
+  "license": "MIT",
+  "private": true
+}

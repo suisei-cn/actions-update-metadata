@@ -1,0 +1,14 @@
+name: "Read and update JSON"
+description: "Read JSON from comments and update it to a file"
+inputs:
+  comment:
+    description: "The comment"
+    required: true
+    default: ""
+  target-file:
+    description: "Target file"
+    required: true
+    default: "./target.json"
+runs:
+  using: node12
+  main: dist/index.js
