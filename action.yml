@@ -5,7 +5,7 @@ inputs:
     description: "The comment"
     required: true
     default: ""
-  target-file:
+  target:
     description: "Target file"
     required: true
     default: "./target.json"
