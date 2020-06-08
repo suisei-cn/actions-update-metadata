@@ -63,7 +63,9 @@ const core = __webpack_require__(470);
 const fs = __webpack_require__(747);
 
 function findAndReturnJSON(text) {
-  return JSON.parse(text.match(/```\n?(\{.*\})\n?```/m)[1]);
+  return JSON.parse(
+    text.replace(/[\n\r ]+```[\n\r ]+/g, "```").match(/```([\w\W]*)```/)[1]
+  );
 }
 
 function main() {

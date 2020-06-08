@@ -2,7 +2,9 @@ const core = require("@actions/core");
 const fs = require("fs");
 
 function findAndReturnJSON(text) {
-  return JSON.parse(text.match(/```\n?(\{.*\})\n?```/m)[1]);
+  return JSON.parse(
+    text.replace(/[\n\r ]+```[\n\r ]+/g, "```").match(/```([\w\W]*)```/)[1]
+  );
 }
 
 function main() {
