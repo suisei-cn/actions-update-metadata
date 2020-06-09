@@ -9,7 +9,7 @@ function findAndReturnJSON(text) {
 
 function findUserName(text) {
   const match = text.match(/@([\w-_]+)/);
-  if (match.length > 1) {
+  if (match && match.length > 1) {
     return match[1];
   } else {
     return core.getInput("default-username") || "librehsbot";
