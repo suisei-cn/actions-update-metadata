@@ -7,6 +7,15 @@ function findAndReturnJSON(text) {
   );
 }
 
+function findUserName(text) {
+  const match = text.match(/@([\w-_]+)/);
+  if (match.length > 1) {
+    return match[1];
+  } else {
+    return core.getInput("default-username") || "librehsbot";
+  }
+}
+
 function main() {
   try {
     const comment = core.getInput("comment");
@@ -27,6 +36,7 @@ function main() {
     }
     old_content.push(to_insert);
     fs.writeFileSync(target, JSON.stringify(old_content, null, 4));
+    core.setOutput("username", findUserName(comment));
   } catch (error) {
     core.setFailed(error.message);
   }

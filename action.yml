@@ -9,6 +9,13 @@ inputs:
     description: "Target file"
     required: true
     default: "./target.json"
+  default-username:
+    description: "Default user name"
+    required: false
+    default: "librehsbot"
+outputs:
+  username:
+    description: "Username of whom issued this PR"
 runs:
   using: node12
   main: dist/index.js
